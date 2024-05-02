@@ -1,0 +1,152 @@
+[debug] [2024-05-02T19:33:29.473Z] ----------------------------------------------------------------------
+[debug] [2024-05-02T19:33:29.475Z] Command:       /usr/local/bin/firebase /Users/glenn/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2024-05-02T19:33:29.475Z] CLI Version:   13.7.2
+[debug] [2024-05-02T19:33:29.476Z] Platform:      darwin
+[debug] [2024-05-02T19:33:29.476Z] Node Version:  v18.5.0
+[debug] [2024-05-02T19:33:29.477Z] Time:          Fri May 03 2024 01:03:29 GMT+0530 (India Standard Time)
+[debug] [2024-05-02T19:33:29.477Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-05-02T19:33:29.581Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-02T19:33:29.582Z] > authorizing via signed-in user (agnelo.desa@yoska.in)
+[debug] [2024-05-02T19:33:29.583Z] [iam] checking project namaste-india-club for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-05-02T19:33:29.584Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/namaste-india-club:testIamPermissions [none]
+[debug] [2024-05-02T19:33:29.585Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/namaste-india-club:testIamPermissions x-goog-quota-user=projects/namaste-india-club
+[debug] [2024-05-02T19:33:29.586Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/namaste-india-club:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-05-02T19:33:31.298Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/namaste-india-club:testIamPermissions 200
+[debug] [2024-05-02T19:33:31.303Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/namaste-india-club:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-05-02T19:33:31.308Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/namaste-india-club [none]
+[debug] [2024-05-02T19:33:32.075Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/namaste-india-club 200
+[debug] [2024-05-02T19:33:32.077Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/namaste-india-club {"projectId":"namaste-india-club","projectNumber":"295669535774","displayName":"Namaste India Club","name":"projects/namaste-india-club","resources":{"hostingSite":"namaste-india-club"},"state":"ACTIVE","etag":"1_5d154715-9340-405d-9e3f-ae1b1b8ae1fe"}
+[debug] [2024-05-02T19:33:34.531Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites pageToken=&pageSize=10
+[debug] [2024-05-02T19:33:35.841Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites 200
+[debug] [2024-05-02T19:33:35.843Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites {"sites":[{"name":"projects/namaste-india-club/sites/namaste-india-club","defaultUrl":"https://namaste-india-club.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-05-02T19:33:35.846Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites 
+[debug] [2024-05-02T19:33:37.032Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites 200
+[debug] [2024-05-02T19:33:37.033Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites {"sites":[{"name":"projects/namaste-india-club/sites/namaste-india-club","defaultUrl":"https://namaste-india-club.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-05-02T19:33:37.037Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/namaste-india-club/webApps/-/config [none]
+[debug] [2024-05-02T19:33:38.277Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/namaste-india-club/webApps/-/config 200
+[debug] [2024-05-02T19:33:38.283Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/namaste-india-club/webApps/-/config {"projectId":"namaste-india-club","storageBucket":"namaste-india-club.appspot.com","apiKey":"AIzaSyBmCLBOs4OlV5FUbyBrkNAJrQE5N92Xzro","authDomain":"namaste-india-club.firebaseapp.com","messagingSenderId":"295669535774"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 14.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-05-02T19:33:43.967Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites/namaste-india-club [none]
+[debug] [2024-05-02T19:33:45.325Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites/namaste-india-club 200
+[debug] [2024-05-02T19:33:45.326Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites/namaste-india-club {"name":"projects/namaste-india-club/sites/namaste-india-club","defaultUrl":"https://namaste-india-club.web.app","type":"DEFAULT_SITE"}
+[info] You are using Node.js 18.5.0. For Next.js, Node.js version >= v18.17.0 is required.
+
+[debug] [2024-05-02T19:33:46.730Z] Error: ENOENT: no such file or directory, open '/Users/glenn/Code/yoska/namaste-india-club-website/.next/export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-05-02T19:34:09.269Z] ----------------------------------------------------------------------
+[debug] [2024-05-02T19:34:09.270Z] Command:       /usr/local/bin/firebase /Users/glenn/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2024-05-02T19:34:09.271Z] CLI Version:   13.7.2
+[debug] [2024-05-02T19:34:09.271Z] Platform:      darwin
+[debug] [2024-05-02T19:34:09.271Z] Node Version:  v18.5.0
+[debug] [2024-05-02T19:34:09.273Z] Time:          Fri May 03 2024 01:04:09 GMT+0530 (India Standard Time)
+[debug] [2024-05-02T19:34:09.273Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-05-02T19:34:09.368Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-02T19:34:09.369Z] > authorizing via signed-in user (agnelo.desa@yoska.in)
+[debug] [2024-05-02T19:34:09.370Z] [iam] checking project namaste-india-club for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-05-02T19:34:09.372Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/namaste-india-club:testIamPermissions [none]
+[debug] [2024-05-02T19:34:09.373Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/namaste-india-club:testIamPermissions x-goog-quota-user=projects/namaste-india-club
+[debug] [2024-05-02T19:34:09.373Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/namaste-india-club:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-05-02T19:34:10.993Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/namaste-india-club:testIamPermissions 200
+[debug] [2024-05-02T19:34:10.997Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/namaste-india-club:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-05-02T19:34:11.000Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/namaste-india-club [none]
+[debug] [2024-05-02T19:34:11.778Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/namaste-india-club 200
+[debug] [2024-05-02T19:34:11.780Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/namaste-india-club {"projectId":"namaste-india-club","projectNumber":"295669535774","displayName":"Namaste India Club","name":"projects/namaste-india-club","resources":{"hostingSite":"namaste-india-club"},"state":"ACTIVE","etag":"1_5d154715-9340-405d-9e3f-ae1b1b8ae1fe"}
+[debug] [2024-05-02T19:34:14.183Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites pageToken=&pageSize=10
+[debug] [2024-05-02T19:34:15.321Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites 200
+[debug] [2024-05-02T19:34:15.321Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites {"sites":[{"name":"projects/namaste-india-club/sites/namaste-india-club","defaultUrl":"https://namaste-india-club.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-05-02T19:34:15.323Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites 
+[debug] [2024-05-02T19:34:17.240Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites 200
+[debug] [2024-05-02T19:34:17.241Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites {"sites":[{"name":"projects/namaste-india-club/sites/namaste-india-club","defaultUrl":"https://namaste-india-club.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-05-02T19:34:17.242Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/namaste-india-club/webApps/-/config [none]
+[debug] [2024-05-02T19:34:18.131Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/namaste-india-club/webApps/-/config 200
+[debug] [2024-05-02T19:34:18.136Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/namaste-india-club/webApps/-/config {"projectId":"namaste-india-club","storageBucket":"namaste-india-club.appspot.com","apiKey":"AIzaSyBmCLBOs4OlV5FUbyBrkNAJrQE5N92Xzro","authDomain":"namaste-india-club.firebaseapp.com","messagingSenderId":"295669535774"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 14.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-05-02T19:34:23.750Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites/namaste-india-club [none]
+[debug] [2024-05-02T19:34:25.071Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites/namaste-india-club 200
+[debug] [2024-05-02T19:34:25.072Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites/namaste-india-club {"name":"projects/namaste-india-club/sites/namaste-india-club","defaultUrl":"https://namaste-india-club.web.app","type":"DEFAULT_SITE"}
+[info] You are using Node.js 18.5.0. For Next.js, Node.js version >= v18.17.0 is required.
+
+[debug] [2024-05-02T19:34:26.416Z] Error: ENOENT: no such file or directory, open '/Users/glenn/Code/yoska/namaste-india-club-website/.next/export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-05-02T19:35:37.805Z] ----------------------------------------------------------------------
+[debug] [2024-05-02T19:35:37.807Z] Command:       /usr/local/bin/firebase /Users/glenn/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2024-05-02T19:35:37.807Z] CLI Version:   13.7.2
+[debug] [2024-05-02T19:35:37.807Z] Platform:      darwin
+[debug] [2024-05-02T19:35:37.808Z] Node Version:  v18.5.0
+[debug] [2024-05-02T19:35:37.811Z] Time:          Fri May 03 2024 01:05:37 GMT+0530 (India Standard Time)
+[debug] [2024-05-02T19:35:37.811Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-05-02T19:35:37.911Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-02T19:35:37.913Z] > authorizing via signed-in user (agnelo.desa@yoska.in)
+[debug] [2024-05-02T19:35:37.914Z] [iam] checking project namaste-india-club for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-05-02T19:35:37.917Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/namaste-india-club:testIamPermissions [none]
+[debug] [2024-05-02T19:35:37.918Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/namaste-india-club:testIamPermissions x-goog-quota-user=projects/namaste-india-club
+[debug] [2024-05-02T19:35:37.918Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/namaste-india-club:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-05-02T19:35:39.571Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/namaste-india-club:testIamPermissions 200
+[debug] [2024-05-02T19:35:39.575Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/namaste-india-club:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-05-02T19:35:39.579Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/namaste-india-club [none]
+[debug] [2024-05-02T19:35:40.272Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/namaste-india-club 200
+[debug] [2024-05-02T19:35:40.275Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/namaste-india-club {"projectId":"namaste-india-club","projectNumber":"295669535774","displayName":"Namaste India Club","name":"projects/namaste-india-club","resources":{"hostingSite":"namaste-india-club"},"state":"ACTIVE","etag":"1_5d154715-9340-405d-9e3f-ae1b1b8ae1fe"}
+[debug] [2024-05-02T19:35:42.687Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites pageToken=&pageSize=10
+[debug] [2024-05-02T19:35:43.871Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites 200
+[debug] [2024-05-02T19:35:43.871Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites {"sites":[{"name":"projects/namaste-india-club/sites/namaste-india-club","defaultUrl":"https://namaste-india-club.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-05-02T19:35:43.872Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites 
+[debug] [2024-05-02T19:35:44.997Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites 200
+[debug] [2024-05-02T19:35:44.998Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites {"sites":[{"name":"projects/namaste-india-club/sites/namaste-india-club","defaultUrl":"https://namaste-india-club.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-05-02T19:35:44.999Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/namaste-india-club/webApps/-/config [none]
+[debug] [2024-05-02T19:35:46.298Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/namaste-india-club/webApps/-/config 200
+[debug] [2024-05-02T19:35:46.303Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/namaste-india-club/webApps/-/config {"projectId":"namaste-india-club","storageBucket":"namaste-india-club.appspot.com","apiKey":"AIzaSyBmCLBOs4OlV5FUbyBrkNAJrQE5N92Xzro","authDomain":"namaste-india-club.firebaseapp.com","messagingSenderId":"295669535774"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 14.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-05-02T19:35:51.947Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites/namaste-india-club [none]
+[debug] [2024-05-02T19:35:53.071Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites/namaste-india-club 200
+[debug] [2024-05-02T19:35:53.075Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites/namaste-india-club {"name":"projects/namaste-india-club/sites/namaste-india-club","defaultUrl":"https://namaste-india-club.web.app","type":"DEFAULT_SITE"}
+[info] You are using Node.js 18.5.0. For Next.js, Node.js version >= v18.17.0 is required.
+
+[info] Building a Cloud Function to run this application. This is needed due to:
+[info]  • non-static component /_not-found/page
+[info] 
+[debug] [2024-05-02T19:36:06.302Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites/namaste-india-club [none]
+[debug] [2024-05-02T19:36:07.414Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites/namaste-india-club 200
+[debug] [2024-05-02T19:36:07.415Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/namaste-india-club/sites/namaste-india-club {"name":"projects/namaste-india-club/sites/namaste-india-club","defaultUrl":"https://namaste-india-club.web.app","type":"DEFAULT_SITE"}
+[debug] [2024-05-02T19:37:24.282Z] Error: Command failed: npm i --omit dev --no-audit
+    at checkExecSyncError (node:child_process:820:11)
+    at Object.execSync (node:child_process:891:15)
+    at execSync (pkg/prelude/bootstrap.js:2111:30)
+    at prepareFrameworks (/Users/glenn/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/frameworks/index.js:375:42)
+    at async deploy (/Users/glenn/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/deploy/index.js:55:13)
+[error] 
+[error] Error: An unexpected error has occurred.
