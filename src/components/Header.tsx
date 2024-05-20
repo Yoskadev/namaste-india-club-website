@@ -22,7 +22,7 @@ const Header: React.FC = () => {
           </Link>
         </div>
         <div className="grid grid-cols-5 gap-4">
-          <NavButton icon={<FaHotel />} to="/" title="Hotels" />
+          <NavButton icon={<FaHotel />} to="/hotels" title="Hotels" />
           <NavButton icon={<FaAirbnb />} to="/airbnbs" title="Airbnbs" />
           <NavButton icon={<FaUtensils />} to="/restaurants" title="Restaurants" />
           <NavButton icon={<FaDumbbell />} to="/gyms" title="Gyms" />

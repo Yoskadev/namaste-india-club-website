@@ -2,8 +2,68 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import { Card } from "@/components/ui/card";
 import Filters from "@/components/Filters";
+
+import Link from "next/link";
+import {
+  Home,
+  LineChart,
+  Package,
+  Package2,
+  PanelLeft,
+  Search,
+  Settings,
+  ShoppingCart,
+  Users2,
+  PlaneTakeoff,
+  PlaneLanding,
+  Route
+} from "lucide-react";
+
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Textarea } from "@/components/ui/textarea";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,13 +77,330 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const items = Array.from(Array(10).keys());
   return (
     <html lang="en">
       <body className={`${inter.className} bg-teal-50`}>
         <main className="container mx-auto flex flex-col justify-start gap-8">
-          <Header />
+          {/* <Header />
           <Filters />
-          <Card className="w-full h-96">{children}</Card>
+          <Card className="w-full h-96">{children}</Card> */}
+          <TooltipProvider>
+            <div className="flex min-h-screen w-full flex-col bg-muted/40">
+              {/* Sidebar */}
+              <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex">
+                <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
+                  <Link
+                    href="#"
+                    className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
+                  >
+                    <Package2 className="h-4 w-4 transition-all group-hover:scale-110" />
+                    <span className="sr-only">Acme Inc</span>
+                  </Link>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Link
+                        href="#"
+                        className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                      >
+                        <Home className="h-5 w-5" />
+                        <span className="sr-only">Dashboard</span>
+                      </Link>
+                    </TooltipTrigger>
+                    <TooltipContent side="right">Dashboard</TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Link
+                        href="#"
+                        className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-accent-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                      >
+                        <ShoppingCart className="h-5 w-5" />
+                        <span className="sr-only">Orders</span>
+                      </Link>
+                    </TooltipTrigger>
+                    <TooltipContent side="right">Orders</TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Link
+                        href="#"
+                        className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                      >
+                        <Package className="h-5 w-5" />
+                        <span className="sr-only">Products</span>
+                      </Link>
+                    </TooltipTrigger>
+                    <TooltipContent side="right">Products</TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Link
+                        href="#"
+                        className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                      >
+                        <Users2 className="h-5 w-5" />
+                        <span className="sr-only">Customers</span>
+                      </Link>
+                    </TooltipTrigger>
+                    <TooltipContent side="right">Customers</TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Link
+                        href="#"
+                        className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                      >
+                        <LineChart className="h-5 w-5" />
+                        <span className="sr-only">Analytics</span>
+                      </Link>
+                    </TooltipTrigger>
+                    <TooltipContent side="right">Analytics</TooltipContent>
+                  </Tooltip>
+                </nav>
+                <nav className="mt-auto flex flex-col items-center gap-4 px-2 sm:py-5">
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Link
+                        href="#"
+                        className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                      >
+                        <Settings className="h-5 w-5" />
+                        <span className="sr-only">Settings</span>
+                      </Link>
+                    </TooltipTrigger>
+                    <TooltipContent side="right">Settings</TooltipContent>
+                  </Tooltip>
+                </nav>
+              </aside>
+
+              {/* Main Content */}
+              <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
+                {/* Header */}
+                <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
+                  <Sheet>
+                    <SheetTrigger asChild>
+                      <Button
+                        size="icon"
+                        variant="outline"
+                        className="sm:hidden"
+                      >
+                        <PanelLeft className="h-5 w-5" />
+                        <span className="sr-only">Toggle Menu</span>
+                      </Button>
+                    </SheetTrigger>
+                    <SheetContent side="left" className="sm:max-w-xs">
+                      <nav className="grid gap-6 text-lg font-medium">
+                        <Link
+                          href="#"
+                          className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
+                        >
+                          <Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
+                          <span className="sr-only">Acme Inc</span>
+                        </Link>
+                        <Link
+                          href="#"
+                          className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
+                        >
+                          <Home className="h-5 w-5" />
+                          Dashboard
+                        </Link>
+                        <Link
+                          href="#"
+                          className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
+                        >
+                          <ShoppingCart className="h-5 w-5" />
+                          Orders
+                        </Link>
+                        <Link
+                          href="#"
+                          className="flex items-center gap-4 px-2.5 text-foreground"
+                        >
+                          <Package className="h-5 w-5" />
+                          Products
+                        </Link>
+                        <Link
+                          href="#"
+                          className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
+                        >
+                          <Users2 className="h-5 w-5" />
+                          Customers
+                        </Link>
+                        <Link
+                          href="#"
+                          className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
+                        >
+                          <LineChart className="h-5 w-5" />
+                          Settings
+                        </Link>
+                      </nav>
+                    </SheetContent>
+                  </Sheet>
+                  <h1 className="flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0">
+                    Namaste India Club ( Logo )
+                  </h1>
+                  <div className="relative ml-auto flex-1 md:grow-0">
+                    <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                    <Input
+                      type="search"
+                      placeholder="Search..."
+                      className="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[336px]"
+                    />
+                  </div>
+                  {/* <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        className="overflow-hidden rounded-full"
+                      >
+                        <Image
+                          src="/placeholder-user.jpg"
+                          width={36}
+                          height={36}
+                          alt="Avatar"
+                          className="overflow-hidden rounded-full"
+                        />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end">
+                      <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuItem>Settings</DropdownMenuItem>
+                      <DropdownMenuItem>Support</DropdownMenuItem>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuItem>Logout</DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu> */}
+                </header>
+
+                {/* Main */}
+                <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
+                  <div className="mx-auto grid flex-1 auto-rows-max gap-4">
+                    <div className="flex items-center gap-4">
+                      <h1 className="flex-1 shrink-0 whitespace-nowrap text-2xl font-semibold tracking-tight sm:grow-0">
+                        Airbnb
+                      </h1>
+                      <div className="flex items-center gap-2 md:ml-auto ">
+                        <div className="grid gap-3">
+                          <Select>
+                            <SelectTrigger
+                              id="status"
+                              aria-label="Select status"
+                            >
+                              <SelectValue placeholder="Sort By" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="draft">Draft</SelectItem>
+                              <SelectItem value="published">Active</SelectItem>
+                              <SelectItem value="archived">Archived</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="grid gap-4 md:grid-cols-[1fr_250px] lg:grid-cols-3 lg:gap-8">
+                      <div className="grid auto-rows-max items-start gap-4 lg:gap-8">
+                        <Card className="sticky top-8">
+                          <CardHeader>
+                            <p className="text-xl font-semibold tracking-tight">
+                              Filters
+                            </p>
+                          </CardHeader>
+                          <CardContent>
+                            <div className="grid gap-6">
+                              <div className="grid gap-3">
+                                <Label htmlFor="status">Status</Label>
+                                <Select>
+                                  <SelectTrigger
+                                    id="status"
+                                    aria-label="Select status"
+                                  >
+                                    <SelectValue placeholder="Select status" />
+                                  </SelectTrigger>
+                                  <SelectContent>
+                                    <SelectItem value="draft">Draft</SelectItem>
+                                    <SelectItem value="published">
+                                      Active
+                                    </SelectItem>
+                                    <SelectItem value="archived">
+                                      Archived
+                                    </SelectItem>
+                                  </SelectContent>
+                                </Select>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 auto-rows-max items-start gap-4 lg:col-span-2 lg:gap-8">
+                        {items.map((item) => (
+                          <Card x-chunk="dashboard-07-chunk-0" key={item}>
+                            <CardContent>
+                              <div className="grid gap-2 pt-6 ">
+                                <div>
+                                  <Badge className="ml-auto sm:ml-0">
+                                    Panjim
+                                  </Badge>
+                                </div>
+                                <h1 className="text-xl font-semibold tracking-tight">
+                                  Charming Superior Room King Bed, São Tomé
+                                  Panjim
+                                </h1>
+                                <p className="text-md line-clamp-3">
+                                  Vacations at O’Pierre are about enveloping
+                                  yourself in the timeless history that radiates
+                                  from the streets below. Old homes were filled
+                                  with space, took advantage of Goa’s abundant
+                                  natural light, and predominantly showcased
+                                  warm, earthy tones. At O’Pierre, we’ve looked
+                                  back to these immortal architectural details
+                                  to bring the experience to you. Sunlight
+                                  floods through casement windows as the subdued
+                                  walls and furniture keep the room bright even
+                                  on rainy days
+                                </p>
+
+                                <div className="flex flex-col gap-2 py-2">
+                                  <div className="flex items-center gap-3 rounded-lg text-muted-foreground transition-all hover:text-primary">
+                                    <Route className="h-4 w-4" />
+                                    Race Start: 1km away
+                                  </div>
+                                  <div className="flex items-center gap-3 rounded-lg text-muted-foreground transition-all hover:text-primary">
+                                    <PlaneTakeoff className="h-4 w-4" />
+                                    From GOX: 32km away
+                                  </div>
+                                  <div className="flex items-center gap-3 rounded-lg text-muted-foreground transition-all hover:text-primary">
+                                    <PlaneLanding className="h-4 w-4" />
+                                    From GOI: 29km away
+                                  </div>
+                                </div>
+                              </div>
+                            </CardContent>
+                            <CardFooter className="flex justify-between">
+                              <div>
+                                <div className="p-1 mx-2 flex-1">
+                                  <p className="text-gray-500 text-xs">Price</p>
+                                  <span className="text-primary text-md font-semibold">
+                                    ₹1400
+                                    <span className="text-gray-500 text-sm">
+                                      {" "}
+                                      / night
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                              <Button variant="outline">View Property</Button>
+                            </CardFooter>
+                          </Card>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </main>
+              </div>
+            </div>
+          </TooltipProvider>
         </main>
       </body>
     </html>
