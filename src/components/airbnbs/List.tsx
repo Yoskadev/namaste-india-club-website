@@ -1,22 +1,22 @@
 "use client";
 import { IAirbnb } from "@/lib/types";
-import { Card, CardContent, CardFooter } from "./ui/card";
-import { Badge } from "./ui/badge";
-import { MapPin, PlaneLanding, PlaneTakeoff, Route } from "lucide-react";
+import { Card, CardContent, CardFooter } from "../ui/card";
+import { Badge } from "../ui/badge";
+import { Bed, MapPin, PlaneLanding, PlaneTakeoff, Route } from "lucide-react";
 import Link from "next/link";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { useSearch } from "@/hooks/searchContext";
 
 interface IAirbnbList {
   airbnbs: IAirbnb[];
 }
 
-const AirbnbList = ({ airbnbs }: IAirbnbList) => {
+const List = ({ airbnbs }: IAirbnbList) => {
   const { searchInput } = useSearch();
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 auto-rows-max items-start gap-4 lg:col-span-2 lg:gap-8">
       {airbnbs
-        .filter((item) => {
+        ?.filter((item) => {
           const itemName = item.name.toLowerCase();
           const searchText = searchInput.toLowerCase();
           return itemName.includes(searchText);
@@ -40,6 +40,10 @@ const AirbnbList = ({ airbnbs }: IAirbnbList) => {
                 <p className="text-md line-clamp-3">{item.description}</p>
 
                 <div className="flex flex-col gap-2 py-2">
+                  <div className="flex items-center gap-3 rounded-lg text-muted-foreground transition-all hover:text-primary">
+                    <Bed className="h-4 w-4  text-primary" /># of bedrooms:{" "}
+                    {item.noOfBedrooms}
+                  </div>
                   <div className="flex items-center gap-3 rounded-lg text-muted-foreground transition-all hover:text-primary">
                     <Route className="h-4 w-4 text-primary" />
                     Race Start: {item.distanceToStartPointApprox / 1000}km away
@@ -68,6 +72,7 @@ const AirbnbList = ({ airbnbs }: IAirbnbList) => {
               <Link href={item.link || "#"} target="_blank">
                 <Button
                   variant="outline"
+                  size="sm"
                   className="border-primary text-primary"
                 >
                   View Property
@@ -80,4 +85,4 @@ const AirbnbList = ({ airbnbs }: IAirbnbList) => {
   );
 };
 
-export default AirbnbList;
+export default List;
