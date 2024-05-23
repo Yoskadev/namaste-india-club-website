@@ -4,7 +4,7 @@ import { createContext, useContext, useState, ReactNode } from "react";
 
 const defaultState: IFilterState = {
   sort: "",
-  costPd: [10000],
+  costPd: [100000],
   distanceToStart: [5000],
   locations: [],
   noOfBedrooms: [],
