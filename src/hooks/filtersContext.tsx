@@ -8,15 +8,18 @@ const defaultState: IFilterState = {
   distanceToStart: [5000],
   locations: [],
   noOfBedrooms: [],
+  stars: 3,
 };
 
 const FiltersContext = createContext<IFilterContext>({
   filters: defaultState,
+  resetFilters: () => {},
   updateSort: () => {},
   updateCostPd: () => {},
   updateDistanceToStart: () => {},
   updateLocations: () => {},
   updateNoOfBedrooms: () => {},
+  updateStars: () => {},
 });
 
 export const useFilters = () => useContext(FiltersContext);
@@ -70,15 +73,25 @@ export const FiltersProvider: React.FC<FiltersProviderProps> = ({
     });
   };
 
+  const updateStars = (value: number) => {
+    setFilters((prev) => ({ ...prev, stars: value }));
+  };
+
+  const resetFilters = () => {
+    setFilters((prev) => ({ ...defaultState }));
+  };
+
   return (
     <FiltersContext.Provider
       value={{
         filters,
+        resetFilters,
         updateSort,
         updateCostPd,
         updateDistanceToStart,
         updateLocations,
         updateNoOfBedrooms,
+        updateStars,
       }}
     >
       {children}

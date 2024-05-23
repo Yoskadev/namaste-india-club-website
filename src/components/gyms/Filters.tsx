@@ -1,38 +1,31 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "../ui/slider";
-import { IHotel } from "@/lib/types";
+import { IGym } from "@/lib/types";
 import { useFilters } from "@/hooks/filtersContext";
 import {
   MAX_AIRBNB_DISTANCE_TO_START,
   MIN_AIRBNB_DISTANCE_TO_START,
-  NUMBER_OF_BEDROOMS,
 } from "@/lib/constants";
 import { useEffect, useMemo, useState } from "react";
 import { Checkbox } from "../ui/checkbox";
 import { Badge } from "../ui/badge";
 import { extractRepeatedLocations } from "@/lib/utils";
 
-interface IHotelFilters {
-  hotels: IHotel[];
+interface IGymFilters {
+  gyms: IGym[];
 }
 
-const Filters = ({ hotels }: IHotelFilters) => {
-  const {
-    filters,
-    updateDistanceToStart,
-    updateLocations,
-    updateNoOfBedrooms,
-  } = useFilters();
+const Filters = ({ gyms }: IGymFilters) => {
+  const { filters, updateLocations, updateStars } = useFilters();
 
   const [locations, setLocations] = useState<string[]>([]);
-  const [bedrooms, setBedrooms] = useState<number[]>([]);
 
   const uniqueLocations = useMemo(() => {
-    const hotelLocations = hotels.map((hotel) => hotel.location);
-    const filteredLocations = extractRepeatedLocations(hotelLocations);
+    const gymLocations = gyms.map((gym) => gym.location);
+    const filteredLocations = extractRepeatedLocations(gymLocations);
     return filteredLocations.sort();
-  }, [hotels]);
+  }, [gyms]);
 
   useEffect(() => {
     const allLocations: string[] = [...locations, ...uniqueLocations];
@@ -54,19 +47,19 @@ const Filters = ({ hotels }: IHotelFilters) => {
           <div className="grid gap-6">
             <div className="grid gap-3">
               <div className="flex justify-between w-full">
-                <Label htmlFor="costPd">{`Distance from start`}</Label>
-                <Badge>{`< ${filters.distanceToStart[0] / 1000} kms`}</Badge>
+                <Label htmlFor="costPd">{`Stars`}</Label>
+                <Badge>{`> ${filters.stars} stars`}</Badge>
               </div>
 
               <div>
                 <Slider
                   id="distanceToStartPointApprox"
-                  defaultValue={[MAX_AIRBNB_DISTANCE_TO_START]}
-                  value={filters.distanceToStart}
-                  onValueChange={(value) => updateDistanceToStart(value)}
-                  max={MAX_AIRBNB_DISTANCE_TO_START}
-                  min={MIN_AIRBNB_DISTANCE_TO_START}
-                  step={100}
+                  defaultValue={[0,3]}
+                  value={[filters.stars]}
+                  onValueChange={(value) => updateStars(value[0])}
+                  max={5}
+                  min={1}
+                  step={0.1}
                 />
               </div>
             </div>
