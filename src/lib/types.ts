@@ -21,6 +21,18 @@ export interface IAirbnb {
   distanceFromAirportApproxGoi: number;
 }
 
+export interface IHotel {
+  id: string;
+  location: string;
+  costPd: number;
+  link: any;
+  distanceFromAirportGox: number;
+  description: string;
+  distanceToStartPoint: number;
+  name: string;
+  distanceFromAirportGoi: number;
+}
+
 export interface IFilterState {
   sort: string;
   costPd: number[];
