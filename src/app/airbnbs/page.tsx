@@ -9,13 +9,16 @@ import { getData } from "./actions";
 import Filters from "@/components/airbnbs/Filters";
 
 const Airbnbs = () => {
-  const { filters } = useFilters();
+  const { filters, resetFilters } = useFilters();
   const [airbnbs, setAirbnbs] = useState<IAirbnb[]>([]);
 
   // Function to fetch data and update state
   const fetchAirbnbs = async () => {
     const fetchedAirbnbs = await getData(filters);
-    setAirbnbs(fetchedAirbnbs);
+    const normalisedAirbnb = fetchedAirbnbs.map((airbnb) => {
+      return { ...airbnb, distanceToStart: airbnb.distanceToStartPointApprox };
+    });
+    setAirbnbs(normalisedAirbnb);
   };
 
   useEffect(() => {
@@ -23,10 +26,15 @@ const Airbnbs = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters]); // Re-run when filters change
 
+    useEffect(() => {
+      resetFilters();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
   const sortOptions = [
     {
-      label: "Distance from Race",
-      value: "distanceToStartPointApprox",
+      label: "Distance to Race",
+      value: "distanceToStart",
     },
     {
       label: "Price: Low to High",

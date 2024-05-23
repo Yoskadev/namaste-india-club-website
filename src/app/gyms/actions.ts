@@ -1,5 +1,5 @@
 import firebase_app from "@/firebase/config";
-import { IAirbnb, IFilterState } from "@/lib/types";
+import { IGym, IFilterState } from "@/lib/types";
 import {
   query,
   where,
@@ -13,9 +13,9 @@ import {
 
 export async function getData(filters: IFilterState) {
   const db = getFirestore(firebase_app);
-  let q = query(collection(db, "airbnbs"));
+  let q = query(collection(db, "gymnasiums"));
 
-  const querySnapshot = (await getDocs(q)) as QuerySnapshot<IAirbnb>;
+  const querySnapshot = (await getDocs(q)) as QuerySnapshot<IGym>;
   return querySnapshot.docs.map((doc) => ({
     ...doc.data(),
     id: doc.id,

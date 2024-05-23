@@ -9,13 +9,16 @@ import { getData } from "./actions";
 import Filters from "@/components/hotels/Filters";
 
 const Hotels = () => {
-  const { filters } = useFilters();
+  const { filters, resetFilters } = useFilters();
   const [hotels, setHotels] = useState<IHotel[]>([]);
 
   // Function to fetch data and update state
   const fetchHotels = async () => {
     const fetchedHotels = await getData(filters);
-    setHotels(fetchedHotels);
+    const normalisedHotels = fetchedHotels.map((hotel) => {
+      return { ...hotel, distanceToStart: hotel.distanceToStartPoint };
+    });
+    setHotels(normalisedHotels);
   };
 
   useEffect(() => {
@@ -23,10 +26,15 @@ const Hotels = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters]); // Re-run when filters change
 
+  useEffect(() => {
+    resetFilters();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const sortOptions = [
     {
-      label: "Distance from Race",
-      value: "distanceToStartPointApprox",
+      label: "Distance to Race",
+      value: "distanceToStart",
     },
     {
       label: "Price: Low to High",
