@@ -28,7 +28,7 @@ export const navItems = [
   },
   {
     label: "Activities",
-    link: "/activities",
+    link: "/todos",
     icon: <MapPin className="h-5 w-5" />,
   },
 ];

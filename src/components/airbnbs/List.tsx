@@ -33,7 +33,9 @@ const List = ({ airbnbs }: IAirbnbList) => {
                 <h1 className="text-xl font-semibold tracking-tight">
                   {item.name}
                 </h1>
-                <p className="text-md line-clamp-3">{item.description}</p>
+                <span className="text-sm rounded-lg text-muted-foreground transition-all hover:text-primary line-clamp-3">
+                  {item.description}
+                </span>
               </div>
               <div className="flex flex-col gap-2 py-2">
                 <span className="flex items-center text-sm gap-3 rounded-md text-muted-foreground transition-all hover:text-primary">

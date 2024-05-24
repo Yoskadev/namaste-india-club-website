@@ -67,6 +67,13 @@ export interface IFilterState {
   cuisines: string[];
 }
 
+export interface ITodo {
+  id: string;
+  name: string;
+  contactInfo91: number;
+  distanceFromMiramarCircle: number;
+}
+
 export interface IFilterContext {
   filters: IFilterState;
   resetFilters: () => void;
