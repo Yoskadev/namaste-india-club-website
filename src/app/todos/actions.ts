@@ -10,7 +10,6 @@ import {
 } from "firebase/firestore";
 
 export async function getData(filters: IFilterState) {
-  "use server"
   const db = getFirestore(firebase_app);
   let q = query(collection(db, "todos"));
 
