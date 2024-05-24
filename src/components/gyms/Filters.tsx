@@ -53,7 +53,7 @@ const Filters = ({ gyms }: IGymFilters) => {
 
               <div>
                 <Slider
-                  id="distanceToStartPointApprox"
+                  id="stars"
                   defaultValue={[0,3]}
                   value={[filters.stars]}
                   onValueChange={(value) => updateStars(value[0])}

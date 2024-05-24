@@ -26,10 +26,10 @@ const Airbnbs = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters]); // Re-run when filters change
 
-    useEffect(() => {
-      resetFilters();
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+  useEffect(() => {
+    resetFilters();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const sortOptions = [
     {

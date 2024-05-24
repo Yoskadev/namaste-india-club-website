@@ -60,7 +60,7 @@ const List = ({ hotels }: IHotelList) => {
                 </span>
               </div>
             </div>
-            <Link href={item.link || "#"} target="_blank">
+            <Link href={item?.link?.hyperlink || "#"} target="_blank">
               <Button
                 variant="outline"
                 size="sm"

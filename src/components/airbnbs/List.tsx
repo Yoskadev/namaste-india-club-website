@@ -2,7 +2,13 @@
 import { IAirbnb } from "@/lib/types";
 import { Card, CardContent, CardFooter } from "../ui/card";
 import { Badge } from "../ui/badge";
-import { Bed, ExternalLink, PlaneLanding, PlaneTakeoff, Route } from "lucide-react";
+import {
+  Bed,
+  ExternalLink,
+  PlaneLanding,
+  PlaneTakeoff,
+  Route,
+} from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { useSearch } from "@/hooks/searchContext";
@@ -62,7 +68,7 @@ const List = ({ airbnbs }: IAirbnbList) => {
                 </span>
               </div>
             </div>
-            <Link href={item.link || "#"} target="_blank">
+            <Link href={item?.link?.hyperlink || "#"} target="_blank">
               <Button
                 variant="outline"
                 size="sm"
