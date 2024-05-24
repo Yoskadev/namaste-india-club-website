@@ -9,6 +9,7 @@ const defaultState: IFilterState = {
   locations: [],
   noOfBedrooms: [],
   stars: 3,
+  distanceToMiramar: [10000],
 };
 
 const FiltersContext = createContext<IFilterContext>({
@@ -20,6 +21,7 @@ const FiltersContext = createContext<IFilterContext>({
   updateLocations: () => {},
   updateNoOfBedrooms: () => {},
   updateStars: () => {},
+  updateDistanceToMiramar: () => {},
 });
 
 export const useFilters = () => useContext(FiltersContext);
@@ -32,6 +34,10 @@ export const FiltersProvider: React.FC<FiltersProviderProps> = ({
   children,
 }) => {
   const [filters, setFilters] = useState<IFilterState>(defaultState);
+
+  const resetFilters = () => {
+    setFilters((prev) => ({ ...defaultState }));
+  };
 
   const updateSort = (value: string) => {
     setFilters((prev) => ({ ...prev, sort: value }));
@@ -77,8 +83,10 @@ export const FiltersProvider: React.FC<FiltersProviderProps> = ({
     setFilters((prev) => ({ ...prev, stars: value }));
   };
 
-  const resetFilters = () => {
-    setFilters((prev) => ({ ...defaultState }));
+  const updateDistanceToMiramar = (value: number[]) => {
+    setFilters((prev) => {
+      return { ...prev, distanceToMiramar: value };
+    });
   };
 
   return (
@@ -92,6 +100,7 @@ export const FiltersProvider: React.FC<FiltersProviderProps> = ({
         updateLocations,
         updateNoOfBedrooms,
         updateStars,
+        updateDistanceToMiramar,
       }}
     >
       {children}
