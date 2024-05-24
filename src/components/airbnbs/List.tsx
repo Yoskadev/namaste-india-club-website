@@ -2,7 +2,7 @@
 import { IAirbnb } from "@/lib/types";
 import { Card, CardContent, CardFooter } from "../ui/card";
 import { Badge } from "../ui/badge";
-import { Bed, MapPin, PlaneLanding, PlaneTakeoff, Route } from "lucide-react";
+import { Bed, ExternalLink, PlaneLanding, PlaneTakeoff, Route } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { useSearch } from "@/hooks/searchContext";
@@ -68,6 +68,7 @@ const List = ({ airbnbs }: IAirbnbList) => {
                 size="sm"
                 className="border-primary text-primary"
               >
+                <ExternalLink className="mr-2 h-4 w-4" />
                 View Property
               </Button>
             </Link>

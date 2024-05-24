@@ -2,7 +2,7 @@
 import { IHotel } from "@/lib/types";
 import { Card, CardContent, CardFooter } from "../ui/card";
 import { Badge } from "../ui/badge";
-import { Bed, PlaneLanding, PlaneTakeoff, Route } from "lucide-react";
+import { Bed, ExternalLink, PlaneLanding, PlaneTakeoff, Route } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { useSearch } from "@/hooks/searchContext";
@@ -66,6 +66,7 @@ const List = ({ hotels }: IHotelList) => {
                 size="sm"
                 className="border-primary text-primary"
               >
+                <ExternalLink className="mr-2 h-4 w-4" />
                 View Property
               </Button>
             </Link>

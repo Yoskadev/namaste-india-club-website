@@ -30,14 +30,14 @@ export const processFilteration = (
     });
   }
 
-  //   Star filter
+  //   Star Filter
   if (filters.stars) {
     filteredArray = filteredArray?.filter((item: any) =>
       item.star ? item.star > filters.stars : true
     );
   }
 
-  //   Distance filter
+  //   Distance to Start Filter
   if (filters.distanceToStart) {
     filteredArray = filteredArray?.filter((item: any) =>
       item.distanceToStart
@@ -55,6 +55,15 @@ export const processFilteration = (
     );
   }
 
+  // Distance to Miramar Filter
+  if (filters.distanceToMiramar) {
+    filteredArray = filteredArray?.filter((item: any) =>
+      item.distanceFromMiramarCircle
+        ? item.distanceFromMiramarCircle < filters.distanceToMiramar[0]
+        : true
+    );
+  }
+
   //   Sort
   if (filters.sort) {
     filteredArray = filteredArray.sort((a, b) => {
@@ -67,6 +76,8 @@ export const processFilteration = (
           return a.noOfBedrooms - b.noOfBedrooms;
         case ">noOfBedrooms":
           return b.noOfBedrooms - a.noOfBedrooms;
+        case "distanceToMiramar":
+          return a.distanceFromMiramarCircle - b.distanceFromMiramarCircle;
         default:
           return a[filters.sort] - b[filters.sort];
       }

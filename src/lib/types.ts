@@ -41,6 +41,13 @@ export interface IGym {
   star: number;
 }
 
+export interface IPhysio {
+  id: string;
+  name: string;
+  contactInfo91: number;
+  distanceFromMiramarCircle: number;
+}
+
 export interface IFilterState {
   sort: string;
   costPd: number[];
@@ -48,6 +55,7 @@ export interface IFilterState {
   locations: string[];
   noOfBedrooms: number[];
   stars: number;
+  distanceToMiramar: number[];
 }
 
 export interface IFilterContext {
@@ -59,4 +67,5 @@ export interface IFilterContext {
   updateLocations: (push: boolean | string, value: string) => void;
   updateNoOfBedrooms: (push: boolean | string, value: number) => void;
   updateStars: (value: number) => void;
+  updateDistanceToMiramar: (value: number[]) => void;
 }
