@@ -33,7 +33,7 @@ export const processFilteration = (
   //   Star Filter
   if (filters.stars) {
     filteredArray = filteredArray?.filter((item: any) =>
-      item.star ? item.star > filters.stars : true
+      item.star || item.rating ? item.star || item.rating > filters.stars : true
     );
   }
 
@@ -64,6 +64,21 @@ export const processFilteration = (
     );
   }
 
+  // Cuisine Filter
+  if (filters.cuisines.length !== 0) {
+    filteredArray = filteredArray?.filter((item: any) => {
+      if (!item.cuisine) return true;
+      let isFound = false;
+      filters.cuisines.forEach((cuisine) => {
+        if (item.cuisine.includes(cuisine)) {
+          isFound = true;
+        }
+      });
+
+      return isFound;
+    });
+  }
+
   //   Sort
   if (filters.sort) {
     filteredArray = filteredArray.sort((a, b) => {
@@ -76,6 +91,12 @@ export const processFilteration = (
           return a.noOfBedrooms - b.noOfBedrooms;
         case ">noOfBedrooms":
           return b.noOfBedrooms - a.noOfBedrooms;
+        case ">rating":
+          return b.rating - a.rating;
+        case "<averagePerPersonMealCost":
+          return a.averagePerPersonMealCost - b.averagePerPersonMealCost;
+        case ">averagePerPersonMealCost":
+          return b.averagePerPersonMealCost - a.averagePerPersonMealCost;
         case "distanceToMiramar":
           return a.distanceFromMiramarCircle - b.distanceFromMiramarCircle;
         default:

@@ -44,3 +44,16 @@ export const getLocation = (address: string) => {
 
   return parts.length >= 3 ? parts[parts.length - 3] : "N.A";
 };
+
+export const extractCuisines = (cuisineLists: string[]): string[] => {
+  const allCuisines = cuisineLists.flatMap((list) =>
+    list.split(", ").map((cuisine) => cuisine.trim())
+  );
+
+  // Use a Set to remove duplicates, then convert it back to an array
+  const uniqueCuisines = Array.from(new Set(allCuisines)).filter(
+    (cuisine) => cuisine != "undefined"
+  );
+
+  return uniqueCuisines;
+};

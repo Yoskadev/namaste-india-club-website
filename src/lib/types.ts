@@ -48,6 +48,14 @@ export interface IPhysio {
   distanceFromMiramarCircle: number;
 }
 
+export interface IRestaurant {
+  id: string;
+  location: string;
+  averagePerPersonMealCost: number;
+  cuisine: string;
+  rating: number;
+}
+
 export interface IFilterState {
   sort: string;
   costPd: number[];
@@ -56,6 +64,7 @@ export interface IFilterState {
   noOfBedrooms: number[];
   stars: number;
   distanceToMiramar: number[];
+  cuisines: string[];
 }
 
 export interface IFilterContext {
@@ -68,4 +77,5 @@ export interface IFilterContext {
   updateNoOfBedrooms: (push: boolean | string, value: number) => void;
   updateStars: (value: number) => void;
   updateDistanceToMiramar: (value: number[]) => void;
+  updateCuisines: (push: boolean | string, value: string) => void;
 }
