@@ -2,7 +2,13 @@
 import { IHotel } from "@/lib/types";
 import { Card, CardContent, CardFooter } from "../ui/card";
 import { Badge } from "../ui/badge";
-import { Bed, ExternalLink, PlaneLanding, PlaneTakeoff, Route } from "lucide-react";
+import {
+  Bed,
+  ExternalLink,
+  PlaneLanding,
+  PlaneTakeoff,
+  Route,
+} from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { useSearch } from "@/hooks/searchContext";
@@ -29,7 +35,9 @@ const List = ({ hotels }: IHotelList) => {
                 <h1 className="text-xl font-semibold tracking-tight">
                   {item.name}
                 </h1>
-                <p className="text-md line-clamp-3">{item.description}</p>
+                <span className="text-sm rounded-lg text-muted-foreground transition-all hover:text-primary line-clamp-3">
+                  {item.description}
+                </span>
               </div>
               <div className="flex flex-col gap-2">
                 <span className="flex items-center gap-3 text-sm rounded-lg text-muted-foreground transition-all hover:text-primary">
