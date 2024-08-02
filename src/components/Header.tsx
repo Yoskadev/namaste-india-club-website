@@ -42,7 +42,7 @@ const Header: React.FC = () => {
         </SheetContent>
       </Sheet>
       {/* <h1 className="flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0"> */}
-      <Image src="/nic-logo.png" alt="logo" width={45} height={45} />
+      <Image src="/nic-logo.png" alt="logo" width={200} height={200} />
       {/* </h1> */}
       <div className="relative ml-auto flex-1 md:grow-0">
         <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
