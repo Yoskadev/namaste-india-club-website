@@ -13,7 +13,7 @@ import { useSearch } from "@/hooks/searchContext";
 
 const Header: React.FC = () => {
   const pathname = usePathname();
-  const {  setSearchInput } = useSearch();
+  const { setSearchInput } = useSearch();
   return (
     <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
       <Sheet>
@@ -41,9 +41,9 @@ const Header: React.FC = () => {
           </nav>
         </SheetContent>
       </Sheet>
-      <h1 className="flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0">
-        NIC ( Logo )
-      </h1>
+      {/* <h1 className="flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0"> */}
+      <Image src="/nic-logo.png" alt="logo" width={200} height={200} />
+      {/* </h1> */}
       <div className="relative ml-auto flex-1 md:grow-0">
         <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
         <Input
