@@ -35,7 +35,7 @@ const List = ({ hotels }: IHotelList) => {
                 <h1 className="text-xl font-semibold tracking-tight">
                   {item.name}
                 </h1>
-                <span className="text-sm rounded-lg text-muted-foreground transition-all hover:text-primary line-clamp-3">
+                <span className="text-md rounded-lg text-muted-foreground transition-all hover:text-primary line-clamp-3">
                   {item.description}
                 </span>
               </div>
