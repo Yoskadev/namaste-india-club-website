@@ -74,6 +74,12 @@ export interface ITodo {
   distanceFromMiramarCircle: number;
 }
 
+export interface IBikeRepair {
+  id: string;
+  name: string;
+  distanceToStartPointApprox: number;
+}
+
 export interface IFilterContext {
   filters: IFilterState;
   resetFilters: () => void;
