@@ -11,6 +11,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Checkbox } from "../ui/checkbox";
 import { Badge } from "../ui/badge";
 import { extractRepeatedLocations } from "@/lib/utils";
+import Disclaimer from "../Disclaimer";
 
 interface IGymFilters {
   gyms: IGym[];
@@ -39,6 +40,7 @@ const Filters = ({ gyms }: IGymFilters) => {
 
   return (
     <div className="grid auto-rows-max items-start gap-4 lg:gap-8">
+      <Disclaimer />
       <Card className="sticky top-8">
         <CardHeader>
           <p className="text-xl font-semibold tracking-tight">Filters</p>
@@ -54,7 +56,7 @@ const Filters = ({ gyms }: IGymFilters) => {
               <div>
                 <Slider
                   id="stars"
-                  defaultValue={[0,3]}
+                  defaultValue={[0, 3]}
                   value={[filters.stars]}
                   onValueChange={(value) => updateStars(value[0])}
                   max={5}

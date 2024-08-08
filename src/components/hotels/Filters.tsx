@@ -12,6 +12,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Checkbox } from "../ui/checkbox";
 import { Badge } from "../ui/badge";
 import { extractRepeatedLocations } from "@/lib/utils";
+import Disclaimer from "../Disclaimer";
 
 interface IHotelFilters {
   hotels: IHotel[];
@@ -46,6 +47,7 @@ const Filters = ({ hotels }: IHotelFilters) => {
 
   return (
     <div className="grid auto-rows-max items-start gap-4 lg:gap-8">
+      <Disclaimer />
       <Card className="sticky top-8">
         <CardHeader>
           <p className="text-xl font-semibold tracking-tight">Filters</p>

@@ -13,6 +13,7 @@ import {
 import { useEffect, useMemo, useState } from "react";
 import { Checkbox } from "../ui/checkbox";
 import { Badge } from "../ui/badge";
+import Disclaimer from "../Disclaimer";
 
 interface IBikeRepairFilters {
     bike: IBikeRepair[];
@@ -23,6 +24,7 @@ const Filters = ({ bike }: IBikeRepairFilters) => {
 
     return (
         <div className="grid auto-rows-max items-start gap-4 lg:gap-8">
+            <Disclaimer />
             <Card className="sticky top-8">
                 <CardHeader>
                     <p className="text-xl font-semibold tracking-tight">Filters</p>

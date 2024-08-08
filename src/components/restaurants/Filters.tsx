@@ -12,6 +12,7 @@ import { Checkbox } from "../ui/checkbox";
 import { Badge } from "../ui/badge";
 import { extractCuisines } from "@/lib/utils";
 import { ScrollArea } from "../ui/scroll-area";
+import Disclaimer from "../Disclaimer";
 
 interface IRestaurantFilters {
   restaurants: IRestaurant[];
@@ -42,6 +43,7 @@ const Filters = ({ restaurants }: IRestaurantFilters) => {
 
   return (
     <div className="grid auto-rows-max items-start gap-4 lg:gap-8">
+      <Disclaimer />
       <Card className="sticky top-8">
         <CardHeader>
           <p className="text-xl font-semibold tracking-tight">Filters</p>
@@ -101,6 +103,7 @@ const Filters = ({ restaurants }: IRestaurantFilters) => {
           </div>
         </CardContent>
       </Card>
+
     </div>
   );
 };

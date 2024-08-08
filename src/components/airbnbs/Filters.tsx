@@ -13,6 +13,7 @@ import {
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { Checkbox } from "../ui/checkbox";
 import { Badge } from "../ui/badge";
+import Disclaimer from "../Disclaimer";
 
 interface IAirbnbFilters {
   airbnbs: IAirbnb[];
@@ -63,12 +64,13 @@ const Filters = ({ airbnbs }: IAirbnbFilters) => {
 
   return (
     <div className="grid auto-rows-max items-start gap-4 lg:gap-8">
+      <Disclaimer />
       <Card className="sticky top-8">
         <CardHeader>
           <p className="text-xl font-semibold tracking-tight">Filters</p>
         </CardHeader>
         <CardContent>
-            
+
           <div className="grid gap-6">
             {/* <div className="grid gap-3">
               <div className="flex justify-between w-full">
@@ -91,7 +93,7 @@ const Filters = ({ airbnbs }: IAirbnbFilters) => {
             <div className="grid gap-3">
               <div className="flex justify-between w-full">
                 <Label htmlFor="costPd">{`Distance from start`}</Label>
-                <Badge>{`< ${filters.distanceToStart[0]/1000} kms`}</Badge>
+                <Badge>{`< ${filters.distanceToStart[0] / 1000} kms`}</Badge>
               </div>
 
               <div>

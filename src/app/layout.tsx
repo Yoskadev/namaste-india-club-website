@@ -7,7 +7,6 @@ import Sidebar from "@/components/Sidebar";
 import { SearchProvider } from "@/hooks/searchContext";
 import { FiltersProvider } from "@/hooks/filtersContext";
 import { Suspense } from "react";
-import Disclaimer from "@/components/Disclaimer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,7 +37,6 @@ export default function RootLayout({
                       <Suspense fallback={<div>Loading...</div>}>
                         {children}
                       </Suspense>
-                      <Disclaimer />
                     </main>
                   </div>
                 </div>
