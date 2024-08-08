@@ -79,6 +79,16 @@ export const processFilteration = (
     });
   }
 
+  // bike repair filter
+  if (filters.distanceToStartPointApprox) {
+    filteredArray = filteredArray?.filter((item: any) =>
+      item.distanceToStartPointApprox ?
+        item.distanceToStartPointApprox < filters.distanceToStartPointApprox[0] :
+        true
+    )
+
+  }
+
   //   Sort
   if (filters.sort) {
     filteredArray = filteredArray.sort((a, b) => {

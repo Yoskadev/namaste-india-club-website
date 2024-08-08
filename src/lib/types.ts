@@ -65,6 +65,7 @@ export interface IFilterState {
   stars: number;
   distanceToMiramar: number[];
   cuisines: string[];
+  distanceToStartPointApprox: number[];
 }
 
 export interface ITodo {
@@ -91,4 +92,5 @@ export interface IFilterContext {
   updateStars: (value: number) => void;
   updateDistanceToMiramar: (value: number[]) => void;
   updateCuisines: (push: boolean | string, value: string) => void;
+  updateDistanceToStartPointApprox: (value: number[]) => void;
 }

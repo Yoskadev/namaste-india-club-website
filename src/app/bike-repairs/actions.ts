@@ -1,5 +1,5 @@
 import firebase_app from "@/firebase/config";
-import { IAirbnb, IBikeRepair, IFilterState } from "@/lib/types";
+import { IBikeRepair, IFilterState } from "@/lib/types";
 import {
     query,
     QuerySnapshot,
@@ -13,7 +13,6 @@ export async function getData(filters: IFilterState) {
     let q = query(collection(db, "service"));
 
     const querySnapshot = (await getDocs(q)) as QuerySnapshot<IBikeRepair>;
-    console.log(querySnapshot);
     return querySnapshot.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,

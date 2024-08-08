@@ -6,7 +6,7 @@ import Title from "@/components/Title";
 import { useFilters } from "@/hooks/filtersContext";
 import { useEffect, useState } from "react";
 import { getData } from "./actions";
-import Filters from "@/components/bike-repairs/Filter";
+import Filters from "@/components/bike-repairs/Filters";
 
 const BikeRepair = () => {
     const { filters, resetFilters } = useFilters();
@@ -15,7 +15,6 @@ const BikeRepair = () => {
     // Function to fetch data and update state
     const fetchBikeRepair = async () => {
         const fetchedBikeRepair = await getData(filters);
-        console.log(fetchedBikeRepair);
         setBikeRepair(fetchedBikeRepair);
     };
 
@@ -32,7 +31,7 @@ const BikeRepair = () => {
     const sortOptions = [
         {
             label: "Distance from Miramar",
-            value: "distanceToMiramar",
+            value: "distanceToStartPointApprox",
         },
     ];
 

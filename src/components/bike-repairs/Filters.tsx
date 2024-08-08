@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "../ui/slider";
-import { IBikeRepair, ITodo } from "@/lib/types";
+import { IBikeRepair } from "@/lib/types";
 import { useFilters } from "@/hooks/filtersContext";
 import {
     MAX_AIRBNB_DISTANCE_TO_START,
@@ -19,7 +19,7 @@ interface IBikeRepairFilters {
 }
 
 const Filters = ({ bike }: IBikeRepairFilters) => {
-    const { filters, updateDistanceToMiramar } = useFilters();
+    const { filters, updateDistanceToStartPointApprox } = useFilters();
 
     return (
         <div className="grid auto-rows-max items-start gap-4 lg:gap-8">
@@ -31,16 +31,16 @@ const Filters = ({ bike }: IBikeRepairFilters) => {
                     <div className="grid gap-6">
                         <div className="grid gap-3">
                             <div className="flex justify-between w-full">
-                                <Label htmlFor="costPd">{`Distance from Miramar`}</Label>
-                                <Badge>{`< ${filters.distanceToMiramar[0] / 1000} kms`}</Badge>
+                                <Label htmlFor="costPd">{`Distance from Start Point`}</Label>
+                                <Badge>{`< ${filters.distanceToStartPointApprox[0] / 1000} kms`}</Badge>
                             </div>
 
                             <div>
                                 <Slider
-                                    id="distanceToMiramar"
+                                    id="distanceToStartPoint"
                                     defaultValue={[MIN_PHYSIO_DISTANCE_TO_MIRAMAR]}
-                                    value={filters.distanceToMiramar}
-                                    onValueChange={(value) => updateDistanceToMiramar(value)}
+                                    value={filters.distanceToStartPointApprox}
+                                    onValueChange={(value) => updateDistanceToStartPointApprox(value)}
                                     max={MAX_PHYSIO_DISTANCE_TO_MIRAMAR}
                                     min={MIN_PHYSIO_DISTANCE_TO_MIRAMAR}
                                     step={100}

@@ -17,11 +17,11 @@ const List = ({ bike }: IBikeRepairList) => {
     const { searchInput } = useSearch();
     const { filters } = useFilters();
 
-    const filteredTodos = processFilteration(bike, filters, searchInput);
+    const filteredBikeRepair = processFilteration(bike, filters, searchInput);
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 auto-rows-max items-start gap-4 lg:col-span-2 lg:gap-8">
-            {filteredTodos.map((item: IBikeRepair) => (
+            {filteredBikeRepair.map((item: IBikeRepair) => (
                 <Card className="h-full flex flex-col justify-between" key={item.id}>
                     <CardContent className="h-full">
                         <div className="h-full flex flex-col justify-between pt-6 gap-4">
@@ -36,7 +36,7 @@ const List = ({ bike }: IBikeRepairList) => {
                             <div className="flex flex-col gap-2">
                                 <span className="flex items-center gap-3 text-sm rounded-lg text-muted-foreground transition-all hover:text-primary">
                                     <MapPin className="h-4 w-4  text-md text-primary" />
-                                    Miramar Circle: {item.distanceToStartPointApprox} kms
+                                    Miramar Circle: {item.distanceToStartPointApprox / 1000} kms
                                     away
                                 </span>
                             </div>
