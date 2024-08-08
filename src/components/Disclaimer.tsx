@@ -5,9 +5,11 @@ const Disclaimer: React.FC = () => {
     Yoska and its subsidiaries are not responsible for any transactions or actions taken based on the information 
     provided. Please verify details on the respective enterprises' websites for accuracy.`
     return (
-        <div style={{ backgroundColor: "#fbfbfa" }}>
+        <div>
             <p className="text-muted-foreground p-2">
-                <strong className="text-2xl">Disclaimer</strong>: {message}
+                <strong className="text-l">Disclaimer</strong>: <span className="text-sm">
+                    {message}
+                </span>
             </p>
         </div>
     )

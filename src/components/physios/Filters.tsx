@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "../ui/slider";
 import { IPhysio } from "@/lib/types";
@@ -24,7 +24,6 @@ const Filters = ({ physios }: IPhysioFilters) => {
 
   return (
     <div className="grid auto-rows-max items-start gap-4 lg:gap-8">
-      <Disclaimer />
       <Card className="sticky top-8">
         <CardHeader>
           <p className="text-xl font-semibold tracking-tight">Filters</p>
@@ -51,6 +50,9 @@ const Filters = ({ physios }: IPhysioFilters) => {
             </div>
           </div>
         </CardContent>
+        <CardFooter>
+          <Disclaimer />
+        </CardFooter>
       </Card>
     </div>
   );
