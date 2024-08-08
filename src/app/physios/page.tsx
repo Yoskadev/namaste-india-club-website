@@ -16,6 +16,7 @@ const Physios = () => {
   const fetchPhysios = async () => {
     const fetchedPhysios = await getData(filters);
     setPhysios(fetchedPhysios);
+    console.log(fetchedPhysios);
   };
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "../ui/slider";
 import { ITodo } from "@/lib/types";
@@ -13,6 +13,7 @@ import {
 import { useEffect, useMemo, useState } from "react";
 import { Checkbox } from "../ui/checkbox";
 import { Badge } from "../ui/badge";
+import Disclaimer from "../Disclaimer";
 
 interface ITodoFilters {
   todos: ITodo[];
@@ -49,6 +50,9 @@ const Filters = ({ todos }: ITodoFilters) => {
             </div>
           </div>
         </CardContent>
+        <CardFooter>
+          <Disclaimer />
+        </CardFooter>
       </Card>
     </div>
   );

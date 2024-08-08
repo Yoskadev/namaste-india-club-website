@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "../ui/slider";
 import { IHotel } from "@/lib/types";
@@ -12,6 +12,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Checkbox } from "../ui/checkbox";
 import { Badge } from "../ui/badge";
 import { extractRepeatedLocations } from "@/lib/utils";
+import Disclaimer from "../Disclaimer";
 
 interface IHotelFilters {
   hotels: IHotel[];
@@ -102,6 +103,9 @@ const Filters = ({ hotels }: IHotelFilters) => {
             </div>
           </div>
         </CardContent>
+        <CardFooter>
+          <Disclaimer />
+        </CardFooter>
       </Card>
     </div>
   );

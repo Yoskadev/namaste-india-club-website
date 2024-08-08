@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "../ui/slider";
 import { IGym } from "@/lib/types";
@@ -11,6 +11,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Checkbox } from "../ui/checkbox";
 import { Badge } from "../ui/badge";
 import { extractRepeatedLocations } from "@/lib/utils";
+import Disclaimer from "../Disclaimer";
 
 interface IGymFilters {
   gyms: IGym[];
@@ -54,7 +55,7 @@ const Filters = ({ gyms }: IGymFilters) => {
               <div>
                 <Slider
                   id="stars"
-                  defaultValue={[0,3]}
+                  defaultValue={[0, 3]}
                   value={[filters.stars]}
                   onValueChange={(value) => updateStars(value[0])}
                   max={5}
@@ -95,6 +96,9 @@ const Filters = ({ gyms }: IGymFilters) => {
             </div>
           </div>
         </CardContent>
+        <CardFooter>
+          <Disclaimer />
+        </CardFooter>
       </Card>
     </div>
   );

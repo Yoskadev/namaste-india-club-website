@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "../ui/slider";
 import { IAirbnb } from "@/lib/types";
@@ -13,6 +13,7 @@ import {
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { Checkbox } from "../ui/checkbox";
 import { Badge } from "../ui/badge";
+import Disclaimer from "../Disclaimer";
 
 interface IAirbnbFilters {
   airbnbs: IAirbnb[];
@@ -68,7 +69,7 @@ const Filters = ({ airbnbs }: IAirbnbFilters) => {
           <p className="text-xl font-semibold tracking-tight">Filters</p>
         </CardHeader>
         <CardContent>
-            
+
           <div className="grid gap-6">
             {/* <div className="grid gap-3">
               <div className="flex justify-between w-full">
@@ -91,7 +92,7 @@ const Filters = ({ airbnbs }: IAirbnbFilters) => {
             <div className="grid gap-3">
               <div className="flex justify-between w-full">
                 <Label htmlFor="costPd">{`Distance from start`}</Label>
-                <Badge>{`< ${filters.distanceToStart[0]/1000} kms`}</Badge>
+                <Badge>{`< ${filters.distanceToStart[0] / 1000} kms`}</Badge>
               </div>
 
               <div>
@@ -172,6 +173,9 @@ const Filters = ({ airbnbs }: IAirbnbFilters) => {
             </div>
           </div>
         </CardContent>
+        <CardFooter>
+          <Disclaimer />
+        </CardFooter>
       </Card>
     </div>
   );

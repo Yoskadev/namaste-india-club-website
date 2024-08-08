@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Slider } from "../ui/slider";
 import { IRestaurant } from "@/lib/types";
@@ -12,6 +12,7 @@ import { Checkbox } from "../ui/checkbox";
 import { Badge } from "../ui/badge";
 import { extractCuisines } from "@/lib/utils";
 import { ScrollArea } from "../ui/scroll-area";
+import Disclaimer from "../Disclaimer";
 
 interface IRestaurantFilters {
   restaurants: IRestaurant[];
@@ -100,7 +101,11 @@ const Filters = ({ restaurants }: IRestaurantFilters) => {
             </div>
           </div>
         </CardContent>
+        <CardFooter>
+          <Disclaimer />
+        </CardFooter>
       </Card>
+
     </div>
   );
 };
