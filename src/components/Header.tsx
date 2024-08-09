@@ -4,7 +4,7 @@ import React, { ChangeEvent } from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from "./ui/sheet";
 import { PanelLeft, Search } from "lucide-react";
 import Image from "next/image";
 import { Input } from "./ui/input";
@@ -29,14 +29,17 @@ const Header: React.FC = () => {
               <Image src="/logo.png" alt="logo" width={32} height={32} />
             </Link>
             {navItems.map((item) => (
-              <Link
-                key={item.link}
-                href={item.link}
-                className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-              >
-                {item.icon}
-                {item.label}
-              </Link>
+              <SheetClose key={item.link} asChild>
+                <Link
+                  key={item.link}
+                  href={item.link}
+                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
+                >
+                  {item.icon}
+                  {item.label}
+                </Link>
+              </SheetClose>
+
             ))}
           </nav>
         </SheetContent>
