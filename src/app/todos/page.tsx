@@ -37,7 +37,7 @@ const Todos = () => {
 
   return (
     <div className="mx-auto grid flex-1 auto-rows-max gap-4 w-full">
-      <Title text="Todos" sort={sortOptions} />
+      <Title text="Places to visit" sort={sortOptions} />
       <div className="grid gap-4 md:grid-cols-[1fr_250px] lg:grid-cols-3 lg:gap-8">
         <Filters todos={todos || []} />
         <List todos={todos || []} />
