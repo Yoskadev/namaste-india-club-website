@@ -28,13 +28,6 @@ const BikeTransport = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const sortOptions = [
-        {
-            label: "Name of Establishment",
-            value: "name",
-        },
-    ];
-
     return (
         <div className="mx-auto grid flex-1 auto-rows-max gap-4 w-full">
             <Title text="Bike Transport" sort={[]} />
