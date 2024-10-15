@@ -1,4 +1,4 @@
-import { Bed, Cross, Dumbbell, Home, MapPin, Utensils, Bike, BriefcaseMedical } from "lucide-react";
+import { Bed, Cross, Dumbbell, Home, MapPin, Utensils, Bike, BriefcaseMedical,Package } from "lucide-react";
 
 
 
@@ -37,6 +37,11 @@ export const navItems = [
     label: "Bike Repairs",
     link: "/bike-repairs",
     icon: <Bike className="h-5 w-5" />
+  },
+  {
+    label: "Bike Transport",
+    link: "/bike-transport",
+    icon: <Package className="h-5 w-5" />
   }
 ];
 

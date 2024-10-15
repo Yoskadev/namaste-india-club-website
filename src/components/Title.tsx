@@ -19,23 +19,25 @@ const Title = ({ text, sort }: ITitle) => {
       </h1>
       <div className="flex items-center gap-2 md:ml-auto ">
         <div className="grid gap-3">
-          <Select
-            onValueChange={(value) => {
-              updateSort(value);
-            }}
-            value={filters.sort || ""}
-          >
-            <SelectTrigger id="status" aria-label="Select status">
-              <SelectValue placeholder="Sort By" />
-            </SelectTrigger>
-            <SelectContent>
-              {sort.map((item) => (
-                <SelectItem key={item.value} value={item.value}>
-                  {item.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          {sort.length!=0 && (
+            <Select
+              onValueChange={(value) => {
+                updateSort(value);
+              }}
+              value={filters.sort || ""}
+            >
+              <SelectTrigger id="status" aria-label="Select status">
+                <SelectValue placeholder="Sort By" />
+              </SelectTrigger>
+              <SelectContent>
+                {sort.map((item) => (
+                  <SelectItem key={item.value} value={item.value}>
+                    {item.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          )}
         </div>
       </div>
     </div>

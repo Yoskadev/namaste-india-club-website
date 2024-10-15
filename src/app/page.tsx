@@ -1,6 +1,9 @@
 import Head from "next/head";
+import { permanentRedirect } from "next/navigation";
 
 export default function Home() {
+  permanentRedirect("/hotels");
+
   return (
     <div>
       <Head>

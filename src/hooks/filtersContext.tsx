@@ -12,6 +12,7 @@ const defaultState: IFilterState = {
   distanceToMiramar: [10000],
   cuisines: [],
   distanceToStartPointApprox: [5000],
+  cities:[],
 };
 
 const FiltersContext = createContext<IFilterContext>({
@@ -25,7 +26,8 @@ const FiltersContext = createContext<IFilterContext>({
   updateStars: () => { },
   updateDistanceToMiramar: () => { },
   updateCuisines: () => { },
-  updateDistanceToStartPointApprox: () => { }
+  updateDistanceToStartPointApprox: () => { },
+  updateCities: () => { },
 });
 
 export const useFilters = () => useContext(FiltersContext);
@@ -112,6 +114,19 @@ export const FiltersProvider: React.FC<FiltersProviderProps> = ({
     });
   };
 
+  const updateCities = (isPush: boolean | string, value: string) => {
+    setFilters((prev) => {
+      let cities = [...prev.cities];
+      if (isPush) {
+        cities.push(value);
+      } else {
+        cities = cities.filter((item) => item !== value);
+      }
+
+      return { ...prev, cities: cities };
+    });
+  };
+
   return (
     <FiltersContext.Provider
       value={{
@@ -126,6 +141,7 @@ export const FiltersProvider: React.FC<FiltersProviderProps> = ({
         updateDistanceToMiramar,
         updateCuisines,
         updateDistanceToStartPointApprox,
+        updateCities,
       }}
     >
       {children}
