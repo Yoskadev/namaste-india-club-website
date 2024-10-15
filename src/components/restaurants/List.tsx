@@ -3,20 +3,11 @@ import { IRestaurant } from "@/lib/types";
 import { Card, CardContent, CardFooter } from "../ui/card";
 import { Badge } from "../ui/badge";
 import {
-  Bed,
-  ExternalLink,
   IndianRupee,
-  MapPin,
-  PlaneLanding,
-  PlaneTakeoff,
-  Route,
   Star,
 } from "lucide-react";
-import Link from "next/link";
-import { Button } from "../ui/button";
 import { useSearch } from "@/hooks/searchContext";
 import { useFilters } from "@/hooks/filtersContext";
-import { getLocation } from "@/lib/utils";
 import { processFilteration } from "@/lib/filters";
 
 interface IRestaurantList {

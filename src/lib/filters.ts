@@ -114,5 +114,23 @@ export const processFilteration = (
       }
     });
   }
+
+
+  // City Filter
+  if (filters.cities.length !== 0) {
+    filteredArray = filteredArray?.filter((item: any) => {
+      if (!item.city) return true;
+      let isFound = false;
+      filters.cities.forEach((city) => {
+        if (item.city.includes(city)) {
+          isFound = true;
+        }
+      });
+
+      return isFound;
+    });
+  }
+
+
   return filteredArray;
 };

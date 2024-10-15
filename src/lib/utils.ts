@@ -57,3 +57,12 @@ export const extractCuisines = (cuisineLists: string[]): string[] => {
 
   return uniqueCuisines;
 };
+
+export const removeDuplicates = (allValues: string[]): string[] => {
+  // Use a Set to remove duplicates, then convert it back to an array
+  const removedDuplicates = Array.from(new Set(allValues)).filter(
+    (value) => value != "undefined"
+  );
+
+  return removedDuplicates;
+};

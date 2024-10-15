@@ -66,6 +66,7 @@ export interface IFilterState {
   distanceToMiramar: number[];
   cuisines: string[];
   distanceToStartPointApprox: number[];
+  cities: string[];
 }
 
 export interface ITodo {
@@ -73,6 +74,15 @@ export interface ITodo {
   name: string;
   contactInfo91: number;
   distanceFromMiramarCircle: number;
+}
+
+export interface IBikeTransport {
+  id: string;
+  name: string;
+  phone: string;
+  email: string;
+  city: string;
+  address: string;
 }
 
 export interface IBikeRepair {
@@ -93,4 +103,5 @@ export interface IFilterContext {
   updateDistanceToMiramar: (value: number[]) => void;
   updateCuisines: (push: boolean | string, value: string) => void;
   updateDistanceToStartPointApprox: (value: number[]) => void;
+  updateCities: (push: boolean | string, value: string) => void;
 }
